@@ -1,2 +1,0 @@
-course := "capstone"
-assignment := "observatory"

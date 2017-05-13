@@ -91,13 +91,15 @@ object Main extends App {
   yearlyData.foreach({ case (yr, data) =>
     generatedSeqs.foreach({ case (zoom, x, y) =>
       visualizeGrid(makeGrid(data), tempColors, zoom, x, y)
-        .output(new java.io.File(s"target/temperatures/$yr/$zoom/$x-$y.png"))})})
+    })
+  })
 
   // Deviations
   deviationRange.foreach({ case (yr, data) =>
     generatedSeqs.foreach({ case (zoom, x, y) =>
       visualizeGrid(deviation(data, average(normalRange.map(_._2))), devColors, zoom, x, y)
-        .output(new java.io.File(s"target/deviations/$yr/$zoom/$x-$y.png"))})})
+    })
+  })
 
   // Week 6:
   // See the 'interaction2.html' file after running 'capstoneUI/fastOptJS' in sbt.

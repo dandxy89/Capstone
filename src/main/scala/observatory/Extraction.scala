@@ -11,16 +11,6 @@ import scala.io.Source
   */
 object Extraction {
 
-  /** CSV Writer
-    *
-    * @param f    Java File I/O
-    * @param op   TODO
-    */
-  def printToFile(f: java.io.File)(op: java.io.PrintWriter => Unit) {
-    val p = new java.io.PrintWriter(f)
-    try { op(p) } finally { p.close() }
-  }
-
   /**
     *
     * @param xs   Iterable Sequence to find the average
